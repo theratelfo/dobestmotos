@@ -25,6 +25,10 @@ public class CategoriasMigrations {
 		categoria.setNombre("nombre");
 		categoriaDAO.insert(categoria);
 
+		categoria=new Categoria();
+		categoria.setCodigo("123");
+		categoria.setNombre("nombre");
+		categoriaDAO.insert(categoria);
 		
 
 	}
