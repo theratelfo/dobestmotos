@@ -20,13 +20,12 @@ public class CategoriasMigrations {
 		categoria.setNombre("Accessories");
 		categoriaDAO.insert(categoria);
 
-<<<<<<< Updated upstream
 		categoria=new Categoria();
 		categoria.setCodigo("123");
 		categoria.setNombre("nombre");
 		categoriaDAO.insert(categoria);
 		
-=======
+
 		categoria = new Categoria();
 		categoria.setCodigo("air-filter");
 		categoria.setNombre("Air Filter");
@@ -116,7 +115,6 @@ public class CategoriasMigrations {
 		categoria.setCodigo("fuel-cock-faucet-valve-switche-pump");
 		categoria.setNombre("Fuel Cock Faucet Valve Switche Pump");
 		categoriaDAO.insert(categoria);
->>>>>>> Stashed changes
 
 	}
 
