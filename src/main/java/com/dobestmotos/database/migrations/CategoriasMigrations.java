@@ -9,22 +9,11 @@ public class CategoriasMigrations {
 		// TODO Auto-generated method stub
 
 		Categoria categoria = new Categoria();
-		categoria.setCodigo("59026");
-		categoria.setNombre("PRODUCTS");
+		categoria.setCodigo("accessories");
+		categoria.setNombre("Accessories");
 
 		CategoriaDAO categoriaDAO = new CategoriaDAO();
 		categoriaDAO.insert(categoria);
-
-		categoria = new Categoria();
-		categoria.setCodigo("accessories");
-		categoria.setNombre("Accessories");
-		categoriaDAO.insert(categoria);
-
-		categoria=new Categoria();
-		categoria.setCodigo("123");
-		categoria.setNombre("nombre");
-		categoriaDAO.insert(categoria);
-		
 
 		categoria = new Categoria();
 		categoria.setCodigo("air-filter");
