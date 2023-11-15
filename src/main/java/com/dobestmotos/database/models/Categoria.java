@@ -12,10 +12,10 @@ public class Categoria {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	private String nombre; 
-	private String codigo;
-	
+		private long id;
+		private String nombre; 
+		private String codigo;
+		
 	public long getId() {
 		return id;
 	}
