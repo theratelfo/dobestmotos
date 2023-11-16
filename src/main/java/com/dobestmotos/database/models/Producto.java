@@ -1,6 +1,17 @@
 package com.dobestmotos.database.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "producto")
 public class Producto {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	private long id;
 	private String descripcion;
@@ -8,6 +19,11 @@ public class Producto {
 	private String categoria;
 	private String div1;
 	private String div2;
+
+	// Constructor vacío (necesario para JPA)
+	public Producto() {
+
+	}
 
 	public long getId() {
 		return id;

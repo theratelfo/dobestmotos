@@ -7,11 +7,11 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.dobestmotos.database.HibernateUtil;
-import com.dobestmotos.database.models.Categoria;
+import com.dobestmotos.database.models.Producto;
 
-public class CategoriaDAO {
+public class ProductoDAO {
 
-	public void insert(Categoria categoria) {
+	public void insert(Producto producto) {
 
 		Transaction tx = null;
 		// Get the session object.
@@ -21,7 +21,7 @@ public class CategoriaDAO {
 			tx = session.beginTransaction();
 
 			// Insert a new student record in the database.
-			session.save(categoria);
+			session.save(producto);
 
 			// Commit hibernate transaction if no exception occurs.
 			tx.commit();
@@ -38,13 +38,14 @@ public class CategoriaDAO {
 		}
 	}
 
-	public List<Categoria> getAll() {
+	@SuppressWarnings("deprecation")
+	public static List<Producto> getAll() {
 
 		// Get the session object.
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		try {
 
-			List<Categoria> data = session.createCriteria(Categoria.class).list();
+			List<Producto> data = session.createCriteria(Producto.class).list();
 			return data;
 
 		} catch (HibernateException e) {
