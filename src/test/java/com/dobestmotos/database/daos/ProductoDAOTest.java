@@ -20,9 +20,10 @@ public class ProductoDAOTest {
         producto.setDiv1("soy un div");
         producto.setDiv2("soy un div");
         producto.setCategoria("soy una categoria");
+        producto.setPrecio(55);
         productoDAO.insert(producto);
 
-        assertTrue(ProductoDAO.getAll().size()>0);
+        assertTrue(!ProductoDAO.getAll().isEmpty());
     }
 }
 

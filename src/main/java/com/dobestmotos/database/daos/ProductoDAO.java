@@ -31,7 +31,6 @@ public class ProductoDAO {
 				// Roll back if any exception occurs.
 				tx.rollback();
 			}
-			e.printStackTrace();
 		} finally {
 			// Close hibernate session.
 			session.close();
@@ -49,8 +48,6 @@ public class ProductoDAO {
 			return data;
 
 		} catch (HibernateException e) {
-
-			e.printStackTrace();
 		} finally {
 			// Close hibernate session.
 			session.close();

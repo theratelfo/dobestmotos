@@ -21,6 +21,7 @@
     <property name="current_session_context_class">thread</property>
 
      <mapping class="com.dobestmotos.database.models.Categoria" />
+     <mapping class="com.dobestmotos.database.models.Producto" />
 
 </session-factory>
 </hibernate-configuration>
