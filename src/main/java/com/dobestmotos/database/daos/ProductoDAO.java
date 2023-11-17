@@ -11,49 +11,49 @@ import com.dobestmotos.database.models.Producto;
 
 public class ProductoDAO {
 
-	public void insert(Producto producto) {
+    public void insert(Producto producto) {
 
-		Transaction tx = null;
-		// Get the session object.
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		try {
-			// Start hibernate session.
-			tx = session.beginTransaction();
+        Transaction tx = null;
+        // Get the session object.
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            // Start hibernate session.
+            tx = session.beginTransaction();
 
-			// Insert a new student record in the database.
-			session.save(producto);
+            // Insert a new student record in the database.
+            session.save(producto);
 
-			// Commit hibernate transaction if no exception occurs.
-			tx.commit();
-			System.out.println("Saved Successfully.");
-		} catch (HibernateException e) {
-			if (tx != null) {
-				// Roll back if any exception occurs.
-				tx.rollback();
-			}
-		} finally {
-			// Close hibernate session.
-			session.close();
-		}
-	}
+            // Commit hibernate transaction if no exception occurs.
+            tx.commit();
+            System.out.println("Saved Successfully.");
+        } catch (HibernateException e) {
+            if (tx != null) {
+                // Roll back if any exception occurs.
+                tx.rollback();
+            }
+        } finally {
+            // Close hibernate session.
+            session.close();
+        }
+    }
 
-	@SuppressWarnings("deprecation")
-	public static List<Producto> getAll() {
+    @SuppressWarnings("deprecation")
+    public static List<Producto> getAll() {
 
-		// Get the session object.
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		try {
+        // Get the session object.
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
 
-			List<Producto> data = session.createCriteria(Producto.class).list();
-			return data;
+            List<Producto> data = session.createCriteria(Producto.class).list();
+            return data;
 
-		} catch (HibernateException e) {
-		} finally {
-			// Close hibernate session.
-			session.close();
+        } catch (HibernateException e) {
+        } finally {
+            // Close hibernate session.
+            session.close();
 
-		}
-		return null;
+        }
+        return null;
 
-	}
+    }
 }
