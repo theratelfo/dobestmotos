@@ -18,7 +18,7 @@ public class CategoriaDAOTest {
 		CategoriaDAO categoriaDAO = new CategoriaDAO();
 		categoriaDAO.insert(categoria);
 		
-		assertTrue(categoriaDAO.getAll().size()>0);
+		assertTrue(!categoriaDAO.getAll().isEmpty());
 		
 	}
 	

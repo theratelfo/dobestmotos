@@ -2,12 +2,9 @@ package com.dobestmotos.database.daos;
 
 import java.util.List;
 
-import javax.persistence.criteria.CriteriaBuilder;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.CriteriaQuery;
 
 import com.dobestmotos.database.HibernateUtil;
 import com.dobestmotos.database.models.Categoria;
@@ -56,7 +53,7 @@ public class CategoriaDAO {
 		} finally {
 			// Close hibernate session.
 			session.close();
-			
+
 		}
 		return null;
 
