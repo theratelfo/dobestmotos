@@ -2,6 +2,9 @@ package com.dobestmotos.webscrapper;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
+
+import com.dobestmotos.database.models.Categoria;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -13,12 +16,18 @@ public class IteradorCategoriasTest {
     public void iteraCategoriasDebeRetornarResultadosNoVacios() throws IOException {
         // Arrange
         IteradorCategorias iterador = new IteradorCategorias();
-        List<String> codigoCategorias = new ArrayList<>();
-        codigoCategorias.add("accessories");
-        codigoCategorias.add("air-filter");
+        
+        final Categoria categoriaAccesories = new Categoria();
+        categoriaAccesories.setCodigo("accessories");
+        final Categoria categoriaAirFilter = new Categoria();
+        categoriaAirFilter.setCodigo("air-filter");
+        
+        List<Categoria> categorias = new ArrayList<>();
+        categorias.add(categoriaAccesories);
+        categorias.add(categoriaAirFilter);
 
         // Act
-        HashMap<String, List<String>> resultados = iterador.iteraCategorias(codigoCategorias);
+        HashMap<String, List<String>> resultados = iterador.iteraCategorias(categorias);
 
         // Assert
         assertNotNull(resultados);
