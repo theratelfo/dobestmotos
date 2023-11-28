@@ -8,6 +8,11 @@
     <artifactId>web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+    
     <dependencies>
         <!-- Hibernate 5.x.x -->
         <dependency>
