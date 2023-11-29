@@ -20,24 +20,5 @@ public class ParserPaginasProductosTest {
         // Assert
         assertNotNull(urls);
         assertEquals(expectedSize, urls.size());
-    }
-
-    
-    
-    /*
-    @Test
-    public void getUrlProductsDeCategoriaNoValida() throws IOException {
-        // Arrange
-        ParserPaginasProductos parser = new ParserPaginasProductos();
-        String codigoCategoria = "categoria_invalida";
-        int expectedSize = 0; // No se esperan URLs válidas
-
-        // Act
-        List<String> urls = parser.getUrlProducts(codigoCategoria);
-
-        // Assert
-        assertNotNull(urls);
-        assertEquals(expectedSize, urls.size());
-    }*/
-    
+    } 
 }

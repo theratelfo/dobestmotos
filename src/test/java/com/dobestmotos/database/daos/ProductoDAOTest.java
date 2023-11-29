@@ -8,31 +8,25 @@ import com.dobestmotos.database.models.Producto;
 
 public class ProductoDAOTest {
 
-    @Test
-    public void gettAll() {
+	@Test
+	public void gettAll() {
 
-        // Inserta un producto en la base de datos
-        Producto producto = new Producto();
+		// Inserta un producto en la base de datos
+		Producto producto = new Producto();
 
-        producto.setId(1);
-        producto.setDescripcion("soy una descripcion");
-        producto.setPrecio("soy un precio");
-        producto.setEscala("soy una categoria");
-        producto.setDiv1("soy un div");
-        producto.setDiv2("soy un div");
+		producto.setDescripcion("soy una descripcion");
+		producto.setCodigoProducto("test");
+		producto.setColores("rojo/negro");
+		producto.setImagen("imagen");
+		producto.setImagenes("imageses");
+		producto.setPrecio(10.10);
+		producto.setDiv1("soy un div");
+		producto.setDiv2("soy un div");
 
-        ProductoDAO productoDAO = new ProductoDAO();
+		ProductoDAO productoDAO = new ProductoDAO();
 
-        productoDAO.insert(producto);
-        assertTrue(!ProductoDAO.getAll().isEmpty());
-        
-        
+		productoDAO.insert(producto);
+		assertTrue(!new ProductoDAO().getAll().isEmpty());
 
-    }
+	}
 }
-
-/**
- * 
- *
- * assertTrue(ProductoDAO.getAll().isEmpty());*
- */
