@@ -7,6 +7,8 @@ import java.util.List;
 
 import org.junit.Test;
 
+import com.dobestmotos.webscrapper.extractors.ObtenerColoresExtractor;
+
 public class ObtenerColoresTest {
 
 	@Test
@@ -769,7 +771,7 @@ public class ObtenerColoresTest {
 				+ "                      gtag_custom_report_conversion(window.gtag_event_2);\r\n"
 				+ "                  })\r\n" + "              });\r\n" + "          \r\n" + "        </script>\r\n"
 				+ "            \r\n" + "</body>\r\n" + "\r\n" + "</html>\r\n" + "";
-		ObtenerColores extractor = new ObtenerColores();
+		ObtenerColoresExtractor extractor = new ObtenerColoresExtractor();
 		List<String> colores = extractor.obtenerColores(html);
 		assertEquals(5, colores.size());
 		assertTrue(colores.contains("black"));
