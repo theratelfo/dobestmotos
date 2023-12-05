@@ -1,0 +1,55 @@
+Main
+	Variables de clase
+		Declaramos diccionario de urls de paginación de categorías a nivel global
+	Metodo main
+		Llamamos al metodo iteradorCategorias();
+	Metodos privados de la clase
+		iteradorCategorias()
+			Instancia IteradorCategorias
+			Guarda el resultado y llama al metodo iteraCategorias()
+				
+			
+---------------------------------------		
+	
+
+IteradorCategorias
+	Metodos publicos
+		iteraCategorias()
+			Define el diccionario local de categorias y lista de urls
+			Obtener la lista de categorias de la base de datos
+			Itera la lista de categorías
+				Instanciar ParserPaginasProductos
+				Establecer el codigoCategoria
+				Agrega el resultado de llamar al metodo getUrlProducts() al diccionario
+			Regresa el diccionario
+
+
+----------------------------------------
+
+				
+ParserPaginasProductos
+	Variables globales privadas
+		setters y getters
+			codigoCategoria		
+	Metodos publicos de la clase
+		getUrlProducts()
+			Definir una lista de strings llamada "urls" e inicializarla
+			Iteración del 1 al 1,000 con un for
+				Define constante local "url" string para almacenar https://www.dobestmoto.com/?product_cat=CODIGO_CATEGORIA&&paged=PAGINA
+				Instancias el componente ObtieneHtml
+				Almacena el resultado en una variable local y llamas al setter de url y le pasas la url que debe consumir
+				Si el html no contiene "No results found."
+					Agrega a la lista local de urls
+				Else
+					break
+			Regresa la lista de urls
+					
+
+--------------------------------------
+
+ObtieneHtml
+	Variables globales privadas
+		setters y getters
+			string de url
+	Metodos publicos de la clase
+		getHtml()

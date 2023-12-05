@@ -1,5 +1,6 @@
 package com.dobestmotos.database.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +14,8 @@ public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	
+	@Column(name="codigo_producto")
 	private String codigoProducto;
 	private String sku;
 	private String descripcion;
