@@ -21,7 +21,7 @@ public class ProductoDAOTest {
 		producto.setImagenes("imageses");
 		producto.setPrecio(10.10);
 		producto.setDiv1("soy un div");
-		producto.setDiv2("soy un div");
+		producto.setSku("");
 
 		ProductoDAO productoDAO = new ProductoDAO();
 

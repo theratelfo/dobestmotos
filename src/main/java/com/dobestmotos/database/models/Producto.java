@@ -14,13 +14,13 @@ public class Producto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String codigoProducto;
+	private String sku;
 	private String descripcion;
 	private String imagen;
 	private double precio;
-	private String div1;
-	private String div2;
+	private String div1;	
 	private String imagenes;
-	private String colores;
+	private String colores;	
 
 	public long getId() {
 		return id;
@@ -68,14 +68,14 @@ public class Producto {
 
 	public void setDiv1(String div1) {
 		this.div1 = div1;
+	}	
+
+	public String getSku() {
+		return sku;
 	}
 
-	public String getDiv2() {
-		return div2;
-	}
-
-	public void setDiv2(String div2) {
-		this.div2 = div2;
+	public void setSku(String sku) {
+		this.sku = sku;
 	}
 
 	public String getImagenes() {

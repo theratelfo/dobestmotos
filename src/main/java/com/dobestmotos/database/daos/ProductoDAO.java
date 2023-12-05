@@ -8,6 +8,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 
 import com.dobestmotos.database.HibernateUtil;
 import com.dobestmotos.database.models.Producto;
@@ -59,6 +60,31 @@ public class ProductoDAO {
             session.close();
         }
         return null;
+    }
+        
+    public long getCount() {
+    	
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        try {
+        	
+            logger.info("Obteniendo el total de todos los productos.");
+
+            String hql = "SELECT COUNT(*) FROM Producto";
+            
+            Query<Long> query = session.createQuery(hql, Long.class);
+            
+            logger.info("Cantidad de registros obtenidos: " + query.uniqueResult());
+            
+            return query.uniqueResult();
+                        
+        } catch (HibernateException e) {
+            logger.severe("Error al obtener todos los productos: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return -1;
     }
     
     @SuppressWarnings("deprecation")

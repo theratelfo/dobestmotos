@@ -10,9 +10,9 @@ import com.dobestmotos.database.models.PaginacionProductoXCategoria;
 import com.dobestmotos.database.models.Producto;
 import com.dobestmotos.utils.Constants;
 import com.dobestmotos.utils.LoggerConfig;
-import com.dobestmotos.webscrapper.extractors.GetProductCodeExtractor;
 import com.dobestmotos.webscrapper.extractors.HrefListExtractor;
 import com.dobestmotos.webscrapper.extractors.MasterProductExtractor;
+import com.dobestmotos.webscrapper.extractors.product.GetProductCodeExtractor;
 import com.dobestmotos.webscrapper.models.ProductModelExtractor;
 
 public class MasterIterator {
@@ -55,8 +55,7 @@ public class MasterIterator {
                     producto.setCodigoProducto(productModelExtractor.getCodigoProducto());
                     producto.setColores(productModelExtractor.getColores().toString());
                     producto.setDescripcion(productModelExtractor.getDescripcion());
-                    producto.setDiv1("");
-                    producto.setDiv2("");
+                    producto.setDiv1(productModelExtractor.getDiv1());                    
                     producto.setImagen(productModelExtractor.getImagen());
                     producto.setImagenes(productModelExtractor.getImagenes().toString());
                     producto.setPrecio(productModelExtractor.getPrecio());

@@ -7,6 +7,8 @@ public class ProductModelExtractor {
 	private String codigoProducto;
 	private String descripcion;
 	private String imagen;
+	private String div1;
+	private String codigoSubcategoria;
 	private List<String> imagenes;
 	private List<String> colores;
 	private double precio;
@@ -59,4 +61,26 @@ public class ProductModelExtractor {
 		this.precio = precio;
 	}
 
+	public String getDiv1() {
+		return div1;
+	}
+
+	public void setDiv1(String div1) {
+		this.div1 = div1;
+	}
+
+	public String getCodigoSubcategoria() {
+		return codigoSubcategoria;
+	}
+
+	public void setCodigoSubcategoria(String codigoSubcategoria) {
+		this.codigoSubcategoria = codigoSubcategoria;
+	}
+
+	@Override
+	public String toString() {
+		return "ProductModelExtractor [codigoProducto=" + codigoProducto + ", descripcion=" + descripcion + ", imagen="
+				+ imagen + ", div1=" + div1 + ", codigoSubcategoria=" + codigoSubcategoria + ", imagenes=" + imagenes
+				+ ", colores=" + colores + ", precio=" + precio + "]";
+	}		
 }

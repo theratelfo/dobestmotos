@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.dobestmotos.database.models.PaginacionProductoXCategoria;
+import com.dobestmotos.database.models.ProductoXSubcategoria;
 
 public class ProductoXCategoriaDAOTest {
 
@@ -12,15 +12,14 @@ public class ProductoXCategoriaDAOTest {
 	public void gettAll() {
 
 		// Inserta un producto en la base de datos
-		PaginacionProductoXCategoria productoXCategoria = new PaginacionProductoXCategoria();
+		ProductoXSubcategoria productoXSubcategoria = new ProductoXSubcategoria();
+		productoXSubcategoria.setCodigoProducto("codigo_producto_test");
+		productoXSubcategoria.setCodigoSubcategoria("codigo_subcategoria_test");
 
-		productoXCategoria.setCodigoCategoria("bmw-brake-guard-with-installation-kit");
-		productoXCategoria.setUrlPaginacionProducto("https://www.dobestmoto.com/?product_cat=accessories&&paged=2&qfyuuid=products_list_f6uyq-c-oo");
+		ProductoXSubcategoriaDAO productoXSubcategoriaDAO = new ProductoXSubcategoriaDAO();
 
-		PaginacionProductoXCategoriaDAO productoXCategoriaDAO = new PaginacionProductoXCategoriaDAO();
-
-		productoXCategoriaDAO.insert(productoXCategoria);
-		assertTrue(!new PaginacionProductoXCategoriaDAO().getAll().isEmpty());
+		productoXSubcategoriaDAO.insert(productoXSubcategoria);
+		assertTrue(!new ProductoXSubcategoriaDAO().getAll().isEmpty());
 
 	}
 }
